@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.0.2...v0.1.0)
+
+### 🚀 特性
+
+- ⚠️  重构整体架构，修改为 类似 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合 ([7e94f0d](https://github.com/Colourlessglow/esconf/commit/7e94f0d))
+
+#### 🚨 破坏性改动
+
+- ⚠️  重构整体架构，修改为 类似 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合 ([7e94f0d](https://github.com/Colourlessglow/esconf/commit/7e94f0d))
+
+### ❤️ 贡献者
+
+- Whitekite <1075790909@qq.com>
+
 ## v0.0.2
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.0.1...v0.0.2)
