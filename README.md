@@ -40,6 +40,8 @@ pnpm install esconf
 bun install esconf
 ```
 
+<!-- /automd -->
+
 ## 简单使用
 
 ```ts
@@ -98,8 +100,6 @@ const config = await loadConfig({
     cwd: process.cwd(),
   })
 ```
-
-<!-- /automd -->
 
 <!-- /automd -->
 
