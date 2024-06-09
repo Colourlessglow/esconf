@@ -8,9 +8,9 @@
     "name": "whitekite",
     "email": "1075790909@qq.com"
   },
-  "repository": "https://gitee.com/vrx/component-pack",
+  "repository": "https://github.com/Colourlessglow/esconf",
   "scripts": {
-    "build": "tsup-node",
+    "build": "automd && tsup-node",
     "release": "vbumpp -r && pnpm build",
     "update:deps": "taze major -r -w -i -f",
     "test": "vitest"
