@@ -21,6 +21,7 @@
     "@vill-v/eslint-config": "^1.2.1",
     "@vill-v/prettier-config": "^1.0.0",
     "@vill-v/tsconfig": "^1.0.1",
+    "automd": "^0.3.7",
     "eslint": "^9.2.0",
     "prettier": "^3.2.5",
     "taze": "^0.13.8",
@@ -36,5 +37,8 @@
     "mlly": "^1.7.1",
     "pathe": "^1.1.2",
     "pkg-types": "^1.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
