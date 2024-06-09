@@ -1,47 +1,39 @@
-# esconf
+# @esconf/core
 
 配置文件加载工具
 
 API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 
- `esconf` 更倾向于手动处理配置文件解析
+ `esconf` 在使用时更像 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合
 
-内置配置文件解析器一览
-- `.mts` `.ts` 基于 [importx](https://github.com/antfu/importx) 实现
-- `.mjs` `.js`  基于 原生 `import('id')` 实现
-- `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 实现
+<!-- automd:badges color="orange" license licenseBranch  bundlephobia packagephobia  -->
 
-<!-- automd:badges color="orange" license licenseBranch  bundlephobia packagephobia name="esconf"  -->
-
-[![npm version](https://img.shields.io/npm/v/esconf?color=orange)](https://npmjs.com/package/esconf)
-[![npm downloads](https://img.shields.io/npm/dm/esconf?color=orange)](https://npmjs.com/package/esconf)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/esconf?color=orange)](https://bundlephobia.com/package/esconf)
+[![npm version](https://img.shields.io/npm/v/@esconf/core?color=orange)](https://npmjs.com/package/@esconf/core)
+[![npm downloads](https://img.shields.io/npm/dm/@esconf/core?color=orange)](https://npmjs.com/package/@esconf/core)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@esconf/core?color=orange)](https://bundlephobia.com/package/@esconf/core)
 [![license](https://img.shields.io/github/license/Colourlessglow/esconf?color=orange)](https://github.com/Colourlessglow/esconf/blob/true/LICENSE)
 
 <!-- /automd -->
 
-> 注意： 预设 js，ts 解析只包含 es module 的解析
-
-
 ## 安装
 
-<!-- automd:pm-install  name="esconf"  -->
+<!-- automd:pm-install  -->
 
 ```sh
 # ✨ Auto-detect
-npx nypm install esconf
+npx nypm install @esconf/core
 
 # npm
-npm install esconf
+npm install @esconf/core
 
 # yarn
-yarn add esconf
+yarn add @esconf/core
 
 # pnpm
-pnpm install esconf
+pnpm install @esconf/core
 
 # bun
-bun install esconf
+bun install @esconf/core
 ```
 
 <!-- /automd -->
@@ -49,8 +41,8 @@ bun install esconf
 ## 简单使用
 
 ```ts
-import { loadConfig } from 'esconf'
-import { packageJsonLayer , tsParser } from 'esconf/presets'
+import { loadConfig } from '@esconf/core'
+import { jsParser, tomlParser, tsParser, yamlParser } from '@esconf/preset-mini'
 
 const config = await loadConfig({
     // 数组越靠前配置文件的优先级越高
@@ -59,49 +51,35 @@ const config = await loadConfig({
         // load from vrx.config.{mts,ts}
         files: ['vrx.config'],
         extensions: ['mts', 'ts'],
-        parser: 'ts',
+        parser: tsParser(),
       },
       {
         // load from vrx.config.{js,mjs}
         files: ['vrx.config'],
         extensions: ['js', 'mjs'],
-        parser: 'js',
+        parser: jsParser(),
       },
       {
         // load from vrx.{yaml,yml}
         files: ['vrx'],
         extensions: ['yaml', 'yml'],
-        parser: 'yaml',
+        parser: yamlParser(),
       },
       {
+        name: 'toml',
          // load from vrx.toml
         files: ['vrx'],
         extensions: ['toml'],
-        parser: 'toml',
-      },
-      // 从 package.json 的 vrx key 获取
-      packageJsonLayer({ configKey: 'vrx' }),
-      // 自定义 cjs 获取的读取
-      {
-        file:['vrx'],
-        extensions:['cjs'],
-        parser:(code,id)=> {
-          return require(id)
-        }
-      },
-      {
-        file:['vrx'],
-        extensions:['cts'],
-        parser: tsParser({
-          // 可继承内置的 tsParser
-          // 配置 importx 的选项以尝试支持 cts 文件的读取
-          // ....
-        })
+        parser: tomlParser(),
       },
     ],
     // 配置默认值
     default: { defaultValue: 'value' },
     cwd: process.cwd(),
+    // 如果某个 layer 命名了，可以用 layer 的名称在运行时排除
+    excludeLayer: ['toml'],
+    // 如果 excludeLayer 的 类型时 funcition ,则可以根据 layer 配置的特征自行决定运行时是否排除
+    excludeLayer: (layer) => layer.extensions.includes('yaml')
   })
 ```
 

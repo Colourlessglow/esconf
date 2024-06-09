@@ -4,14 +4,16 @@
 
 API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 
- `esconf` 更倾向于手动处理配置文件解析
+`esconf` 在使用时更像 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合
 
-内置配置文件解析器一览
-- `.mts` `.ts` 基于 [importx](https://github.com/antfu/importx) 实现
-- `.mjs` `.js`  基于 原生 `import('id')` 实现
-- `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 实现
+`esconf/preset-mini` 最小预设内置解析器一览
+- `.mts` `.ts` 基于 [importx](https://github.com/antfu/importx) 导入
+- `.mjs` `.js`  基于 原生 `import('id')` 导入
+- `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
 
-<!-- automd:badges color="orange" license licenseBranch  bundlephobia packagephobia name="esconf"  -->
+> 注意： 预设 js，ts 解析只包含 es module 的解析
+
+<!-- automd:badges color="orange" license licenseBranch  bundlephobia packagephobia  -->
 
 [![npm version](https://img.shields.io/npm/v/esconf?color=orange)](https://npmjs.com/package/esconf)
 [![npm downloads](https://img.shields.io/npm/dm/esconf?color=orange)](https://npmjs.com/package/esconf)
@@ -20,12 +22,9 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 
 <!-- /automd -->
 
-> 注意： 预设 js，ts 解析只包含 es module 的解析
-
-
 ## 安装
 
-<!-- automd:pm-install  name="esconf"  -->
+<!-- automd:pm-install  -->
 
 ```sh
 # ✨ Auto-detect
@@ -49,54 +48,32 @@ bun install esconf
 ## 简单使用
 
 ```ts
-import { loadConfig } from 'esconf'
-import { packageJsonLayer , tsParser } from 'esconf/presets'
+import { loadConfig,presetMini } from 'esconf'
+import { tsParser } from 'esconf/preset-mini'
 
 const config = await loadConfig({
+    presets:[
+      presetMini({
+        // 配置如下会解析 vite.config.{mjs,js,ts,mts} vite.{toml,....}
+        name:'vite',
+        configName:'config',
+        // 设置 ts 文件解析规则
+        ts:{
+          loader:'tsx'
+        },
+        // 关闭js 文件解析
+        js: false,
+        // ....
+      })
+      ],
     // 数组越靠前配置文件的优先级越高
+    // layers 的优先级比 presets 高
     layers: [
       {
         // load from vrx.config.{mts,ts}
         files: ['vrx.config'],
         extensions: ['mts', 'ts'],
-        parser: 'ts',
-      },
-      {
-        // load from vrx.config.{js,mjs}
-        files: ['vrx.config'],
-        extensions: ['js', 'mjs'],
-        parser: 'js',
-      },
-      {
-        // load from vrx.{yaml,yml}
-        files: ['vrx'],
-        extensions: ['yaml', 'yml'],
-        parser: 'yaml',
-      },
-      {
-         // load from vrx.toml
-        files: ['vrx'],
-        extensions: ['toml'],
-        parser: 'toml',
-      },
-      // 从 package.json 的 vrx key 获取
-      packageJsonLayer({ configKey: 'vrx' }),
-      // 自定义 cjs 获取的读取
-      {
-        file:['vrx'],
-        extensions:['cjs'],
-        parser:(code,id)=> {
-          return require(id)
-        }
-      },
-      {
-        file:['vrx'],
-        extensions:['cts'],
-        parser: tsParser({
-          // 可继承内置的 tsParser
-          // 配置 importx 的选项以尝试支持 cts 文件的读取
-          // ....
-        })
+        parser: tsParser(),
       },
     ],
     // 配置默认值

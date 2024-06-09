@@ -1,18 +1,10 @@
-import type { ImportxOptions } from 'importx'
-
-/**
- * [`importx`](https://github.com/antfu/importx/blob/main/src/types.ts) 的配置
- */
-export interface TsImportOptions extends Omit<ImportxOptions, 'parentURL'> {}
-
-export type BuiltinParsers = 'json' | 'yaml' | 'toml' | 'jsonc' | 'json5' | 'js' | 'ts'
-
 export type CustomParser<T> = (code: string, id: string) => Promise<T | undefined> | T | undefined
 
 /**
  * 配置文件解析规则配置
  */
 export interface ESConfLayer<T> {
+  name?: string
   /**
    * 配置文件文件名称
    */
@@ -24,7 +16,7 @@ export interface ESConfLayer<T> {
   /**
    * 配置文件解析规则
    */
-  parser: BuiltinParsers | CustomParser<T>
+  parser: CustomParser<T>
   /**
    * 是否在配置文件解析发生错误时抛出错误
    * @default false
@@ -32,11 +24,17 @@ export interface ESConfLayer<T> {
   throwOnError?: boolean
 }
 
+export type Preset<T> = ESConfLayer<T>[]
+
 export interface ESConfOptions<T> {
+  /**
+   * 一个 layer 预设
+   */
+  presets?: Preset<T>[]
   /**
    * 配置文件解析规则配置
    */
-  layers: ESConfLayer<T>[]
+  layers?: ESConfLayer<T>[]
   /**
    * 解析配置文件根文件夹
    * @default process.cwd()
@@ -46,16 +44,22 @@ export interface ESConfOptions<T> {
    * 默认数据
    */
   default?: T
+  /**
+   * 排除某些 layer
+   */
+  excludeLayer?: string[] | ((layer: ESConfLayer<T>) => boolean)
 }
 
 /**
  * @inner
  */
-export interface ResolveESConfOptions<T> extends Required<Omit<ESConfOptions<T>, 'default'>> {
+export interface ResolveESConfOptions<T>
+  extends Required<Omit<ESConfOptions<T>, 'default' | 'presets' | 'layers'>> {
   /**
    * 默认数据
    */
   default?: T
+  layers: ESConfLayer<T>[]
 }
 
 /**

@@ -1,7 +1,6 @@
 import { join } from 'pathe'
 import { exists, isFile, readFile } from '@void-fs/kit'
 import { defu } from 'defu'
-import { baseLayer } from './builtin-layers'
 import { resolveOptions } from './options'
 import type {
   CustomParser,
@@ -54,10 +53,8 @@ const parseFile = async <T>(
 }
 
 const findlayer = <T>(layer: ESConfLayer<T>, cwd: string) => {
-  const _layer = baseLayer<T>(layer)
-
-  const files = findFiles(_layer)
-  return files.map((filepath) => parseFile(filepath, _layer, cwd))
+  const files = findFiles(layer)
+  return files.map((filepath) => parseFile(filepath, layer, cwd))
 }
 
 const mergeLayers = <T>(layers: LoadESConfResultLayer<T>[], option: ResolveESConfOptions<T>): T => {
@@ -65,11 +62,27 @@ const mergeLayers = <T>(layers: LoadESConfResultLayer<T>[], option: ResolveESCon
   return defu(...[...layers, { config: option.default }]).config
 }
 
+const excludeLayers = <T>(
+  layers: ESConfLayer<T>[],
+  excludeLayer: ESConfOptions<T>['excludeLayer']
+) => {
+  if (!excludeLayer) {
+    return layers
+  }
+  if (typeof excludeLayer === 'function') {
+    return layers.filter((layer) => !excludeLayer(layer))
+  }
+  return layers.filter((layer) => !(layer.name && excludeLayer.includes(layer.name)))
+}
+
 export const loadConfig = async <T>(option: ESConfOptions<T>): Promise<LoadESConfResult<T>> => {
   const _option = resolveOptions(option)
   const layers = await Promise.all(
-    option.layers.map((layer) => findlayer(layer, _option.cwd)).flat()
+    excludeLayers(_option.layers, _option.excludeLayer)
+      .map((layer) => findlayer(layer, _option.cwd))
+      .flat()
   )
+
   const config = mergeLayers(layers, _option)
 
   return {

@@ -1,37 +1,17 @@
 {
-  "name": "esconf",
+  "name": "@esconf/monorepo",
   "version": "0.0.2",
   "packageManager": "pnpm@9.2.0",
   "license": "MIT",
+  "private": true,
   "type": "module",
   "author": {
     "name": "whitekite",
     "email": "1075790909@qq.com"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./presets": {
-      "import": "./dist/presets.js",
-      "require": "./dist/presets.cjs",
-      "types": "./dist/presets.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "repository": "https://github.com/Colourlessglow/esconf",
   "scripts": {
-    "build": "automd && tsup-node",
+    "build": "automd && turbo run build",
     "release": "vbumpp -r && pnpm build",
     "update:deps": "taze major -r -w -i -f",
     "test": "vitest"
@@ -47,19 +27,8 @@
     "prettier": "^3.2.5",
     "taze": "^0.13.8",
     "tsup": "^8.0.2",
+    "turbo": "^2.0.3",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
-  },
-  "dependencies": {
-    "@void-fs/kit": "0.0.1-beta.15",
-    "confbox": "^0.1.7",
-    "defu": "^6.1.4",
-    "importx": "^0.3.5",
-    "mlly": "^1.7.1",
-    "pathe": "^1.1.2",
-    "pkg-types": "^1.1.1"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

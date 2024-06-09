@@ -1,7 +1,12 @@
 import type { SupportedLoader } from 'importx'
 import { readPackageJSON } from 'pkg-types'
 import { defu } from 'defu'
-import type { TsImportOptions } from './types'
+import type { ImportxOptions } from 'importx'
+
+/**
+ * [`importx`](https://github.com/antfu/importx/blob/main/src/types.ts) 的配置
+ */
+export interface TsImportOptions extends Omit<ImportxOptions, 'parentURL'> {}
 
 /**
  * ecmascript/typescript 模块导入

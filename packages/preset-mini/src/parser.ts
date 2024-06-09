@@ -10,9 +10,8 @@ import {
   parseYAML,
 } from 'confbox'
 import { interopDefault } from 'mlly'
-import { tsImport } from './tsImport'
-import type { BuiltinParsers, CustomParser, TsImportOptions } from './types'
-import { defineParser } from './helper'
+import { defineParser } from '@esconf/core'
+import { TsImportOptions, tsImport } from './tsImport'
 
 export const jsonParser = defineParser<JSONParseOptions>((option) => {
   return (code) => parseJSON(code, option)
@@ -47,14 +46,3 @@ export const jsParser = defineParser(() => {
     return interopDefault(config)
   }
 })
-
-export const getBuiltinParser = <T>() =>
-  new Map<BuiltinParsers, CustomParser<T>>([
-    ['json', jsonParser()],
-    ['yaml', yamlParser()],
-    ['toml', tomlParser()],
-    ['jsonc', jsoncParser()],
-    ['json5', json5Parser()],
-    ['js', jsParser()],
-    ['ts', tsParser()],
-  ])
