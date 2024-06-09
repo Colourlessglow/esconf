@@ -79,6 +79,10 @@ const config = await loadConfig({
     // 配置默认值
     default: { defaultValue: 'value' },
     cwd: process.cwd(),
+    // 如果某个 layer 命名了，可以用 layer 的名称在运行时排除
+    excludeLayer: ['preset-mini:toml'],
+    // 如果 excludeLayer 的 类型时 funcition ,则可以根据 layer 配置的特征自行决定运行时是否排除
+    excludeLayer: (layer) => layer.extensions.includes('yaml')
   })
 ```
 
