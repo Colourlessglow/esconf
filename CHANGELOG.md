@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.1.0...v0.1.1)
+
+### 🏡 框架
+
+- Update README.md ([5c97cd3](https://github.com/Colourlessglow/esconf/commit/5c97cd3))
+- **preset-mini:** Bump `importx@0.3.6` ([185430b](https://github.com/Colourlessglow/esconf/commit/185430b))
+
+### ❤️ 贡献者
+
+- Whitekite <1075790909@qq.com>
+
 ## v0.1.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.0.2...v0.1.0)
