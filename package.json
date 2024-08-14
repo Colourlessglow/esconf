@@ -1,7 +1,7 @@
 {
   "name": "@esconf/monorepo",
   "version": "0.1.1",
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.7.0",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -17,18 +17,18 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
-    "@vill-v/bumpp": "^1.0.4",
-    "@vill-v/eslint-config": "^1.2.1",
+    "@types/node": "^22.3.0",
+    "@vill-v/bumpp": "^1.0.6",
+    "@vill-v/eslint-config": "^1.4.0",
     "@vill-v/prettier-config": "^1.0.0",
     "@vill-v/tsconfig": "^1.0.1",
-    "automd": "^0.3.7",
-    "eslint": "^9.4.0",
-    "prettier": "^3.3.2",
-    "taze": "^0.13.8",
-    "tsup": "^8.1.0",
-    "turbo": "^2.0.3",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "automd": "^0.3.8",
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3",
+    "taze": "^0.16.5",
+    "tsup": "^8.2.4",
+    "turbo": "^2.0.12",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
