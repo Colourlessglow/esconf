@@ -13,8 +13,10 @@ test('load config from preset-mini', async () => {
   expect(config.layers).toEqual([
     { name: 'vrx.config.mts', config: { type: 'mts' } },
     { name: 'vrx.config.ts', config: { type: 'ts' } },
+    { name: 'vrx.config.cts', config: { type: 'cts' } },
     { name: 'vrx.config.mjs', config: { type: 'mjs' } },
     { name: 'vrx.config.js', config: { type: 'js' } },
+    { name: 'vrx.config.cjs', config: { type: 'cjs' } },
     { name: 'vrx.toml', config: { type: 'toml' } },
     { name: 'vrx.yaml', config: { type: 'yaml' } },
     { name: 'vrx.yml', config: { type: 'yml' } },

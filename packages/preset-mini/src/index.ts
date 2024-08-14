@@ -27,11 +27,11 @@ export const presetMini = <T>(option: PresetMiniOption): Preset<T> => {
       'ts',
       {
         files: [configFile],
-        extensions: ['mts', 'ts'],
+        extensions: ['mts', 'ts', 'cts'],
         parser: tsParser(option.ts as TsImportOptions),
       },
     ],
-    ['js', { files: [configFile], extensions: ['mjs', 'js'], parser: jsParser() }],
+    ['js', { files: [configFile], extensions: ['mjs', 'js', 'cjs'], parser: jsParser() }],
     ['toml', { files: [option.name], extensions: ['toml'], parser: tomlParser() }],
     [
       'yaml',

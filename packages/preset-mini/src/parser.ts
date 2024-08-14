@@ -1,3 +1,4 @@
+import { defineParser } from '@esconf/core'
 import {
   type JSON5ParseOptions,
   type JSONCParseOptions,
@@ -9,8 +10,6 @@ import {
   parseTOML,
   parseYAML,
 } from 'confbox'
-import { interopDefault } from 'mlly'
-import { defineParser } from '@esconf/core'
 import { TsImportOptions, tsImport } from './tsImport'
 
 export const jsonParser = defineParser<JSONParseOptions>((option) => {
@@ -34,15 +33,7 @@ export const tomlParser = defineParser(() => {
 })
 
 export const tsParser = defineParser<TsImportOptions>((option) => {
-  return async (_code, id) => {
-    const config = await tsImport<any>(id, option)
-    return interopDefault(config)
-  }
+  return (_code, id) => tsImport<any>(id, option)
 })
 
-export const jsParser = defineParser(() => {
-  return async (_code, id) => {
-    const config = await import(id)
-    return interopDefault(config)
-  }
-})
+export { tsParser as jsParser }
