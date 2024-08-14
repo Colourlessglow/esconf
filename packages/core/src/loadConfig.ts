@@ -21,6 +21,19 @@ const findFiles = <T>(layer: ESConfLayer<T>) => {
   return files
 }
 
+const getConfigWithParser = async <T>(layerParser: CustomParser<T>, filepath: string) => {
+  if (typeof layerParser === 'function') {
+    return layerParser(filepath)
+  }
+  if (layerParser.type === 'id') {
+    return layerParser.parser(filepath)
+  }
+  if (layerParser.type === 'code') {
+    const code = await readFile(filepath, { cwd: '' })
+    return layerParser.parser(code, filepath)
+  }
+}
+
 const parseFile = async <T>(
   filepath: string,
   layer: ESConfLayer<T>,
@@ -28,10 +41,8 @@ const parseFile = async <T>(
 ): Promise<LoadESConfResultLayer<T>> => {
   try {
     if ((await exists(filepath, { cwd })) && (await isFile(filepath, { cwd }))) {
-      const code = await readFile(filepath, { cwd })
-      const config = await Promise.resolve(
-        (layer.parser as CustomParser<T>)(code, join(cwd, filepath))
-      )
+      const id = join(cwd, filepath)
+      const config = await getConfigWithParser(layer.parser, id)
       return {
         name: filepath,
         config,

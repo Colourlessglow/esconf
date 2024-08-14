@@ -7,8 +7,7 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 `esconf` 在使用时更像 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合
 
 `esconf/preset-mini` 最小预设内置解析器一览
-- `.mts` `.ts` 基于 [importx](https://github.com/antfu/importx) 导入
-- `.mjs` `.js`  基于 原生 `import('id')` 导入
+- `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
 - `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
 
 > 注意： 预设 js，ts 解析只包含 es module 的解析
@@ -54,7 +53,7 @@ import { tsParser } from 'esconf/preset-mini'
 const config = await loadConfig({
     presets:[
       presetMini({
-        // 配置如下会解析 vite.config.{mjs,js,ts,mts} vite.{toml,....}
+        // 配置如下会解析 vite.config.{cts,ts,mts} vite.{toml,....}
         name:'vite',
         configName:'config',
         // 设置 ts 文件解析规则

@@ -1,4 +1,27 @@
-export type CustomParser<T> = (code: string, id: string) => Promise<T | undefined> | T | undefined
+/**
+ * 基于文件路径解析
+ */
+export type CustomFallbackParser<T> = (id: string) => Promise<T | undefined> | T | undefined
+/**
+ * 基于文件文本解析
+ */
+export interface CustomCodeParser<T> {
+  type: 'code'
+  parser: (code: string, id: string) => Promise<T | undefined> | T | undefined
+}
+
+/**
+ * 基于文件路径解析
+ */
+export interface CustomIdParser<T> {
+  type: 'id'
+  parser: (id: string) => Promise<T | undefined> | T | undefined
+}
+
+/**
+ * 自定义文件解析
+ */
+export type CustomParser<T> = CustomCodeParser<T> | CustomIdParser<T> | CustomFallbackParser<T>
 
 /**
  * 配置文件解析规则配置
