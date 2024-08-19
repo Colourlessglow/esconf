@@ -1,4 +1,4 @@
-import { join } from 'pathe'
+import { isAbsolute, join } from 'pathe'
 import { exists, isFile, readFile } from '@void-fs/kit'
 import { defu } from 'defu'
 import { resolveOptions } from './options'
@@ -40,8 +40,8 @@ const parseFile = async <T>(
   cwd: string
 ): Promise<LoadESConfResultLayer<T>> => {
   try {
-    if ((await exists(filepath, { cwd })) && (await isFile(filepath, { cwd }))) {
-      const id = join(cwd, filepath)
+    const id = join(isAbsolute(filepath) ? '' : cwd, filepath)
+    if ((await exists(id, { cwd: '' })) && (await isFile(id, { cwd: '' }))) {
       const config = await getConfigWithParser(layer.parser, id)
       return {
         name: filepath,

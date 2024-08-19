@@ -1,11 +1,14 @@
 import { join } from 'node:path'
+import { homedir } from 'node:os'
 import { expect, test } from 'vitest'
 import { loadConfig } from '../src'
 import { presetMini } from '../src/preset-mini'
 
 test('load config from preset-mini', async () => {
   const config = await loadConfig({
-    presets: [presetMini({ name: 'vrx', configName: 'config', 'package.json': false })],
+    presets: [
+      presetMini({ name: 'vrx', configName: 'config', 'package.json': false, globalRc: true }),
+    ],
     cwd: join(import.meta.dirname, 'configs'),
     default: { defaultValue: 'value' },
   })
@@ -23,6 +26,7 @@ test('load config from preset-mini', async () => {
     { name: 'vrx.jsonc', config: { type: 'jsonc' } },
     { name: 'vrx.json5', config: { type: 'json5' } },
     { name: 'vrx.json', config: { type: 'json' } },
+    { name: join(homedir(), '.vrxrc'), config: undefined },
   ])
 })
 

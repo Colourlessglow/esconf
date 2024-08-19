@@ -1,3 +1,5 @@
+import { join } from 'node:path'
+import { homedir } from 'node:os'
 import type { ESConfLayer, Preset } from '@esconf/core'
 import type {
   JSON5ParseOptions,
@@ -6,6 +8,7 @@ import type {
   YAMLParseOptions,
 } from 'confbox'
 import {
+  globalRcFileParser,
   jsParser,
   json5Parser,
   jsonParser,
@@ -76,7 +79,7 @@ export const presetMini = <T>(options: PresetMiniOption): Preset<T> => {
       {
         files: [`.${option.name}rc`],
         extensions: [''],
-        parser: rcFileParser({ name: option.name, globalRc: option.globalRc }),
+        parser: rcFileParser(option.name),
       },
     ],
     [
@@ -87,6 +90,14 @@ export const presetMini = <T>(options: PresetMiniOption): Preset<T> => {
         parser: packageJsonParser(option.name),
       },
     ],
+    [
+      'globalRc',
+      {
+        files: [join(homedir(), `.${option.name}rc`)],
+        extensions: [''],
+        parser: globalRcFileParser(option.name),
+      },
+    ],
   ])
 
   layers.forEach((value, key) => {
@@ -94,7 +105,7 @@ export const presetMini = <T>(options: PresetMiniOption): Preset<T> => {
       layers.delete(key)
       return
     }
-    layers.set(key, { name: `preset-mini:${key}`, ...value })
+    layers.set(key, { name: `preset-mini:${key}`, ...value, throwOnError: option.throwOnError })
   })
   return [...layers.values()]
 }
