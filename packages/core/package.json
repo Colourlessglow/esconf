@@ -29,8 +29,10 @@
   },
   "dependencies": {
     "@void-fs/kit": "0.0.1-beta.15",
+    "chokidar": "^3.6.0",
     "defu": "^6.1.4",
-    "pathe": "^1.1.2"
+    "pathe": "^1.1.2",
+    "perfect-debounce": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"
