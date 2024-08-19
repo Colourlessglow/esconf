@@ -1,5 +1,4 @@
 import type { ESConfLayer, Preset } from '@esconf/core'
-import { readPackageJSON } from 'pkg-types'
 import type {
   JSON5ParseOptions,
   JSONCParseOptions,
@@ -11,12 +10,13 @@ import {
   json5Parser,
   jsonParser,
   jsoncParser,
+  packageJsonParser,
   tomlParser,
   tsParser,
   yamlParser,
 } from './parser'
-import type { PresetMiniOption } from './type'
 import type { TsImportOptions } from './tsImport'
+import type { PresetMiniOption } from './type'
 
 export * from './parser'
 
@@ -70,10 +70,7 @@ export const presetMini = <T>(option: PresetMiniOption): Preset<T> => {
       {
         files: ['package'],
         extensions: ['json'],
-        parser: async () => {
-          const pkg = await readPackageJSON()
-          return pkg[option.name]
-        },
+        parser: packageJsonParser(option.name),
       },
     ],
   ])

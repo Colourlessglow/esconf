@@ -10,6 +10,7 @@ import {
   parseTOML,
   parseYAML,
 } from 'confbox'
+import { readPackageJSON } from 'pkg-types'
 import { TsImportOptions, tsImport } from './tsImport'
 
 export const jsonParser = defineCodeParser<JSONParseOptions>((option) => {
@@ -34,6 +35,13 @@ export const tomlParser = defineCodeParser(() => {
 
 export const tsParser = defineIdParser<TsImportOptions>((option) => {
   return (id) => tsImport<any>(id, option)
+})
+
+export const packageJsonParser = defineIdParser<string>((name) => {
+  return async () => {
+    const pkg = await readPackageJSON()
+    return pkg[name!]
+  }
 })
 
 export { tsParser as jsParser }
