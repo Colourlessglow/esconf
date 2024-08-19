@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.3.2
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.1...v0.3.2)
+
+### 🚀 特性
+
+- **preset-mini:** 增加默认关闭的 rc 文件解析 ([2510d27](https://github.com/Colourlessglow/esconf/commit/2510d27))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.3.1
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.0...v0.3.1)
