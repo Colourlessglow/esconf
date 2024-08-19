@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.2.0...v0.3.0)
+
+### 🚀 特性
+
+- 增加 `watchConfig` 方法，支持监听设置文件后续变化 ([886fdf7](https://github.com/Colourlessglow/esconf/commit/886fdf7))
+
+### 📖 文档
+
+- Update README.md ([54ee3dc](https://github.com/Colourlessglow/esconf/commit/54ee3dc))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.2.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.1.1...v0.2.0)
