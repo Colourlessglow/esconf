@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.3.3
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.2...v0.3.3)
+
+### 🩹 修复
+
+- **preset-mini:** 修复项目内 rc 文件不存在，导致的全局 rc 文件不加载的问题 ([ec95fdb](https://github.com/Colourlessglow/esconf/commit/ec95fdb))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.3.2
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.1...v0.3.2)
