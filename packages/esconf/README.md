@@ -9,6 +9,7 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 `esconf/preset-mini` 最小预设内置解析器一览
 - `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
 - `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
+- `.${name}rc` `${homedir}/.${name}rc` 基于 [rc9](https://github.com/unjs/rc9) 导入
 
 > 注意： 预设 js，ts 解析只包含 es module 的解析
 

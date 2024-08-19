@@ -11,6 +11,7 @@ import {
   jsonParser,
   jsoncParser,
   packageJsonParser,
+  rcFileParser,
   tomlParser,
   tsParser,
   yamlParser,
@@ -20,7 +21,12 @@ import type { PresetMiniOption } from './type'
 
 export * from './parser'
 
-export const presetMini = <T>(option: PresetMiniOption): Preset<T> => {
+export const presetMini = <T>(options: PresetMiniOption): Preset<T> => {
+  const option: PresetMiniOption = {
+    rcFile: false,
+    globalRc: false,
+    ...options,
+  }
   const configFile = [option.name, option.configName].filter(Boolean).join('.')
   const layers = new Map<string, ESConfLayer<T>>([
     [
@@ -63,6 +69,14 @@ export const presetMini = <T>(option: PresetMiniOption): Preset<T> => {
         files: [option.name],
         extensions: ['json'],
         parser: jsonParser(option.json as JSONParseOptions),
+      },
+    ],
+    [
+      'rcFile',
+      {
+        files: [`.${option.name}rc`],
+        extensions: [''],
+        parser: rcFileParser({ name: option.name, globalRc: option.globalRc }),
       },
     ],
     [

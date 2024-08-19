@@ -10,7 +10,9 @@ import {
   parseTOML,
   parseYAML,
 } from 'confbox'
+import defu from 'defu'
 import { readPackageJSON } from 'pkg-types'
+import { read, readUser } from 'rc9'
 import { TsImportOptions, tsImport } from './tsImport'
 
 export const jsonParser = defineCodeParser<JSONParseOptions>((option) => {
@@ -41,6 +43,21 @@ export const packageJsonParser = defineIdParser<string>((name) => {
   return async () => {
     const pkg = await readPackageJSON()
     return pkg[name!]
+  }
+})
+
+export interface RcFileParserOption {
+  name: string
+  globalRc?: boolean
+}
+
+export const rcFileParser = defineIdParser<RcFileParserOption>((option) => {
+  return () => {
+    const name = option?.name ? `.${option.name}rc` : '.conf'
+    return defu(
+      read<any>({ name, flat: false }),
+      ...[option?.globalRc ? readUser({ name, flat: false }) : void 0].filter(Boolean)
+    )
   }
 })
 
