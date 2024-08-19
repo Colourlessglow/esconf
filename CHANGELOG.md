@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.3.1
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.0...v0.3.1)
+
+### 🚀 特性
+
+- **preset-mini:** 导出 `package.json` 解析为单独 parser ([7f2420f](https://github.com/Colourlessglow/esconf/commit/7f2420f))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.3.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.2.0...v0.3.0)
