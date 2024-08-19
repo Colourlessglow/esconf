@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.4.1",
-    "@vill-v/bumpp": "^2.1.1",
+    "@vill-v/bumpp-github": "^2.1.1",
     "@vill-v/eslint-config": "^1.4.0",
     "@vill-v/prettier-config": "^1.0.0",
     "@vill-v/tsconfig": "^1.0.1",
