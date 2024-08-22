@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: ^22.4.1
-        version: 22.4.1
+        specifier: ^22.5.0
+        version: 22.5.0
       '@vill-v/bumpp-github':
-        specifier: ^2.1.1
-        version: 2.1.1
+        specifier: ^2.1.2
+        version: 2.1.2
       '@vill-v/eslint-config':
         specifier: ^1.4.0
         version: 1.4.0(@types/eslint@9.6.0)(eslint@9.9.0(jiti@1.21.6))(prettier@3.3.3)(typescript@5.5.4)(vue@3.4.27(typescript@5.5.4))
@@ -46,7 +46,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.0.5
-        version: 2.0.5(@types/node@22.4.1)
+        version: 2.0.5(@types/node@22.5.0)
 
   packages/core:
     dependencies:
@@ -486,12 +486,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@esconf/core@0.2.0':
-    resolution: {integrity: sha512-f3lsaKjrkpd85pbRZeWkHHW+8DBzr+erIhZc02fDEU/SEtAWsOOLUApKODvfhn5B0TfISF20yrh6hVLhowv6Fw==}
+  '@esconf/core@0.3.3':
+    resolution: {integrity: sha512-IntbVkuEeQ4BWpfprvYdJNEFO5ruelp3H6EI5ziBN3nxjYMIp2MNbpJP3nck86lPUJFHmS/KvhEwI0Njgwi4UQ==}
     engines: {node: '>=18'}
 
-  '@esconf/preset-mini@0.2.0':
-    resolution: {integrity: sha512-5/Unc01PduDFDXuRUV9WOs4gkkyrIZjBaAvI/ikGHxm7egsOoDe1i3Vj6YOnf9Q2Vi61UAtfNEawVyYtzje8Sw==}
+  '@esconf/preset-mini@0.3.3':
+    resolution: {integrity: sha512-C6iTmIMZ7iH9n3jYvK5Hs9P/E9mrKmQhlq7UVHtxBcAtOpEiiC6z8w6k51BVgzR/vLW4iFEVzCtByiW1omVfcw==}
     engines: {node: '>=18'}
 
   '@eslint-community/eslint-utils@4.4.0':
@@ -849,8 +849,8 @@ packages:
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
-  '@types/node@22.4.1':
-    resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
+  '@types/node@22.5.0':
+    resolution: {integrity: sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -942,13 +942,13 @@ packages:
     resolution: {integrity: sha512-ba0lNI19awqZ5ZNKh6wCModMwoZs457StTebQ0q1NP58zSi2F6MOZRXwfKZy+jB78JNJ/WH8GSh2IQNzXX8Nag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vill-v/bumpp-github@2.1.1':
-    resolution: {integrity: sha512-JLmgZCxpjfcVW6miU1nROZKDzRLH4/1SDanblmZsWlCwjjBBDVTwtes3Mo0+ozPzqls1OYdjA0FYg/18Pt+GEQ==}
+  '@vill-v/bumpp-github@2.1.2':
+    resolution: {integrity: sha512-TmgeMndbx+VnjaLYRX7YywgJXEcz+1eNWIQUJj/Ijx2uClLjyn7yJ7byECD7aEBhm+MA9dW28XRRIbPrmo9ANw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  '@vill-v/bumpp@2.1.1':
-    resolution: {integrity: sha512-SlSHkt+wSWbAVXSbypgcjya9kQg8/u/WEpuZd9PNrX0NnuMRbT9ezNldFogjqjCuVRIYWKqtLxF2tRI5SLtfpw==}
+  '@vill-v/bumpp@2.1.2':
+    resolution: {integrity: sha512-mNiWXdhO/ruvGeb8YBCo8Pt6zCa6dEoEhEsrcjPOfA826EVGqM1iMWi4QCjXkYosK7YmpeoNMR7k/PtVIy7ePQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1431,8 +1431,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  esconf@0.2.0:
-    resolution: {integrity: sha512-INZPGYFVfDpOBT1TlF1Jn50A+OrV9svdJBfHM8fPnJRJdyUd3DVIc4YP18gAnMkGITu5QMPKpqP6hE8VG3XPDA==}
+  esconf@0.3.3:
+    resolution: {integrity: sha512-JeBA111Dt1+NlIGyQ5aLIlKzh8uyeDX6O2cJhZcBrwTOfu/4MR/HfscmByGYnAt/SNWU4rc8GrAN+1U4ImcK4Q==}
     engines: {node: '>=18'}
 
   eslint-compat-utils@0.5.1:
@@ -3269,19 +3269,22 @@ snapshots:
   '@esbuild/win32-x64@0.23.0':
     optional: true
 
-  '@esconf/core@0.2.0':
+  '@esconf/core@0.3.3':
     dependencies:
       '@void-fs/kit': 0.0.1-beta.15
+      chokidar: 3.6.0
       defu: 6.1.4
       pathe: 1.1.2
+      perfect-debounce: 1.0.0
 
-  '@esconf/preset-mini@0.2.0':
+  '@esconf/preset-mini@0.3.3':
     dependencies:
-      '@esconf/core': 0.2.0
+      '@esconf/core': 0.3.3
       confbox: 0.1.7
       defu: 6.1.4
       jiti: 2.0.0-beta.3
       pkg-types: 1.1.3
+      rc9: 2.1.2
 
   '@eslint-community/eslint-utils@4.4.0(eslint@9.9.0(jiti@1.21.6))':
     dependencies:
@@ -3559,7 +3562,7 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.10
 
-  '@types/node@22.4.1':
+  '@types/node@22.5.0':
     dependencies:
       undici-types: 6.19.6
 
@@ -3647,7 +3650,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
-      semver: 7.6.2
+      semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.4)
     optionalDependencies:
       typescript: 5.5.4
@@ -3686,27 +3689,26 @@ snapshots:
       '@typescript-eslint/types': 8.1.0
       eslint-visitor-keys: 3.4.3
 
-  '@vill-v/bumpp-github@2.1.1':
+  '@vill-v/bumpp-github@2.1.2':
     dependencies:
-      '@vill-v/bumpp': 2.1.1
+      '@vill-v/bumpp': 2.1.2
       consola: 3.2.3
       execa: 9.3.1
       ofetch: 1.3.4
     transitivePeerDependencies:
       - magicast
 
-  '@vill-v/bumpp@2.1.1':
+  '@vill-v/bumpp@2.1.2':
     dependencies:
       bumpp: 9.5.1
       cac: 6.7.14
       changelogen: 0.5.5
       consola: 3.2.3
       defu: 6.1.4
-      esconf: 0.2.0
+      esconf: 0.3.3
       execa: 9.3.1
       globby: 14.0.2
       ora: 8.0.1
-      rc9: 2.1.2
     transitivePeerDependencies:
       - magicast
 
@@ -4302,10 +4304,10 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  esconf@0.2.0:
+  esconf@0.3.3:
     dependencies:
-      '@esconf/core': 0.2.0
-      '@esconf/preset-mini': 0.2.0
+      '@esconf/core': 0.3.3
+      '@esconf/preset-mini': 0.3.3
 
   eslint-compat-utils@0.5.1(eslint@9.9.0(jiti@1.21.6)):
     dependencies:
@@ -5774,13 +5776,13 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-node@2.0.5(@types/node@22.4.1):
+  vite-node@2.0.5(@types/node@22.5.0):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.4.0(@types/node@22.4.1)
+      vite: 5.4.0(@types/node@22.5.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5792,16 +5794,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.0(@types/node@22.4.1):
+  vite@5.4.0(@types/node@22.5.0):
     dependencies:
       esbuild: 0.21.4
       postcss: 8.4.41
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 22.4.1
+      '@types/node': 22.5.0
       fsevents: 2.3.3
 
-  vitest@2.0.5(@types/node@22.4.1):
+  vitest@2.0.5(@types/node@22.5.0):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -5819,11 +5821,11 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.4.0(@types/node@22.4.1)
-      vite-node: 2.0.5(@types/node@22.4.1)
+      vite: 5.4.0(@types/node@22.5.0)
+      vite-node: 2.0.5(@types/node@22.5.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.4.1
+      '@types/node': 22.5.0
     transitivePeerDependencies:
       - less
       - lightningcss

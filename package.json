@@ -1,7 +1,7 @@
 {
   "name": "@esconf/monorepo",
   "version": "0.3.3",
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@9.8.0",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -17,8 +17,8 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^22.4.1",
-    "@vill-v/bumpp-github": "^2.1.1",
+    "@types/node": "^22.5.0",
+    "@vill-v/bumpp-github": "^2.1.2",
     "@vill-v/eslint-config": "^1.4.0",
     "@vill-v/prettier-config": "^1.0.0",
     "@vill-v/tsconfig": "^1.0.1",
