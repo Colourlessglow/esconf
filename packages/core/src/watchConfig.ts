@@ -6,7 +6,7 @@ export const watchConfig = async <T>(
 ): Promise<ESConfWatchResult<T>> => {
   let config = await loadConfig<T>(option)
   const watchingFiles = config.layers.map((item) => item.name)
-  const watch = await import('chokidar').then((r) => r.watch || r.default || r)
+  const { watch } = await import('chokidar')
   const watcher = watch(watchingFiles, {
     ignoreInitial: true,
     ignorePermissionErrors: true,

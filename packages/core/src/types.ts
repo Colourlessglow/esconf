@@ -1,4 +1,4 @@
-import type { WatchOptions } from 'chokidar'
+import type { ChokidarOptions } from 'chokidar'
 
 /**
  * 基于文件路径解析
@@ -116,7 +116,7 @@ export interface LoadESConfResult<T> {
 }
 
 export interface ESConfWatchOptions<T> extends ESConfOptions<T> {
-  chokidarOptions?: WatchOptions
+  chokidarOptions?: ChokidarOptions
   /**
    * 监听更改防抖
    * @default 100

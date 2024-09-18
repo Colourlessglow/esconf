@@ -15,9 +15,9 @@
   "module": "./dist/index.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@void-fs/kit": "0.0.1-beta.15",
-    "chokidar": "^3.6.0",
+    "chokidar": "^4.0.0",
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
     "perfect-debounce": "^1.0.0"
