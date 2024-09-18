@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.4.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.3...v0.4.0)
+
+### 🚀 特性
+
+- Update  `chokidar` to v4 ([18dd26a](https://github.com/Colourlessglow/esconf/commit/18dd26a))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.3.3
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.2...v0.3.3)
