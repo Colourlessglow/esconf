@@ -16,7 +16,7 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 <!-- automd:badges color="orange" license licenseBranch  bundlephobia packagephobia  -->
 
 [![npm version](https://img.shields.io/npm/v/esconf?color=orange)](https://npmjs.com/package/esconf)
-[![npm downloads](https://img.shields.io/npm/dm/esconf?color=orange)](https://npmjs.com/package/esconf)
+[![npm downloads](https://img.shields.io/npm/dm/esconf?color=orange)](https://npm.chart.dev/esconf)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/esconf?color=orange)](https://bundlephobia.com/package/esconf)
 [![license](https://img.shields.io/github/license/Colourlessglow/esconf?color=orange)](https://github.com/Colourlessglow/esconf/blob/true/LICENSE)
 
@@ -41,6 +41,9 @@ pnpm install esconf
 
 # bun
 bun install esconf
+
+# deno
+deno install esconf
 ```
 
 <!-- /automd -->

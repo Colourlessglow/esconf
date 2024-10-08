@@ -1,5 +1,6 @@
 import { defu } from 'defu'
-import { JitiOptions, createJiti } from 'jiti'
+import { createJiti } from 'jiti'
+import { type JitiOptions } from 'jiti/native'
 
 /**
  * [`jiti`](https://github.com/unjs/jiti/blob/main/lib/types.d.ts#L38) 的配置
@@ -7,7 +8,6 @@ import { JitiOptions, createJiti } from 'jiti'
 export interface TsImportOptions extends JitiOptions {}
 
 const DEFAULT_OPTIONS: JitiOptions = {
-  interopDefault: true,
   moduleCache: false,
   extensions: ['.js', '.ts', '.mjs', '.cjs', '.mts', '.cts', '.json'],
 }
@@ -19,6 +19,7 @@ const DEFAULT_OPTIONS: JitiOptions = {
  * @returns
  */
 export const tsImport = async <T>(filepath: string, options?: TsImportOptions): Promise<T> => {
-  const jiti = createJiti(filepath, defu(options, DEFAULT_OPTIONS))
-  return jiti.import(filepath) as Promise<T>
+  const o = defu(options, DEFAULT_OPTIONS)
+  const jiti = createJiti(filepath, o)
+  return jiti.import(filepath, { default: true }) as Promise<T>
 }
