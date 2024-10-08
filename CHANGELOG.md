@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.4.0...v0.5.0)
+
+### 🚀 特性
+
+- **preset-mini:** Update `jiti` to `v2` stable ([a958438](https://github.com/Colourlessglow/esconf/commit/a958438))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.4.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.3.3...v0.4.0)
