@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.1
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.5.0...v0.5.1)
+
+### 🚀 特性
+
+- **core:** Update `void-fs` to `0.0.1-beta.18` reduce the number of deps ([4059b70](https://github.com/Colourlessglow/esconf/commit/4059b70))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.5.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.4.0...v0.5.0)
