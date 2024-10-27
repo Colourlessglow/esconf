@@ -51,8 +51,8 @@ importers:
   packages/core:
     dependencies:
       '@void-fs/kit':
-        specifier: 0.0.1-beta.17
-        version: 0.0.1-beta.17
+        specifier: 0.0.1-beta.18
+        version: 0.0.1-beta.18
       chokidar:
         specifier: ^4.0.1
         version: 4.0.1
@@ -1064,6 +1064,10 @@ packages:
 
   '@void-fs/kit@0.0.1-beta.17':
     resolution: {integrity: sha512-u5gu7Ny6pDEO1/q14gkaFfCzt6hHlTsmuX4fbfizGjSnEA/BEmbW/ENNm1FCyfz7sVgYiigAFg5USyroGEcI8Q==}
+    engines: {node: '>=18'}
+
+  '@void-fs/kit@0.0.1-beta.18':
+    resolution: {integrity: sha512-/5Woz0Q4xGBdhpPRXWOTx9LFroDpSviG446elhADMDDr04RIwzIrq76LKNuHyExs9A0yv/936FGTFWU4MgfhYw==}
     engines: {node: '>=18'}
 
   '@vue/compiler-core@3.5.11':
@@ -3583,6 +3587,11 @@ snapshots:
     dependencies:
       globby: 14.0.2
       pathe: 1.1.2
+
+  '@void-fs/kit@0.0.1-beta.18':
+    dependencies:
+      pathe: 1.1.2
+      tinyglobby: 0.2.9
 
   '@vue/compiler-core@3.5.11':
     dependencies:

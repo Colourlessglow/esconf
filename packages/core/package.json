@@ -28,7 +28,7 @@
     "build": "automd && tsup-node"
   },
   "dependencies": {
-    "@void-fs/kit": "0.0.1-beta.17",
+    "@void-fs/kit": "0.0.1-beta.18",
     "chokidar": "^4.0.1",
     "defu": "^6.1.4",
     "pathe": "^1.1.2",
