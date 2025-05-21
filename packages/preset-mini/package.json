@@ -25,7 +25,7 @@
   ],
   "repository": "https://github.com/Colourlessglow/esconf",
   "scripts": {
-    "build": "automd && tsup-node"
+    "build": "automd && tsdown"
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
