@@ -8,7 +8,7 @@
     "email": "1075790909@qq.com"
   },
   "engines": {
-    "node": ">=18"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
