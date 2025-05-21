@@ -14,12 +14,12 @@ const DEFAULT_OPTIONS: JitiOptions = {
 
 /**
  * ecmascript/typescript 模块导入
- * @param fileName 模块路径
- * @param options [`jiti`](https://github.com/unjs/jiti/blob/main/lib/types.d.ts#L38) 的配置
+ * @param filepath 模块路径
+ * @param options `jiti`(https://github.com/unjs/jiti/blob/main/lib/types.d.ts#L38) 的配置
  * @returns
  */
 export const tsImport = async <T>(filepath: string, options?: TsImportOptions): Promise<T> => {
   const o = defu(options, DEFAULT_OPTIONS)
   const jiti = createJiti(filepath, o)
-  return jiti.import(filepath, { default: true }) as Promise<T>
+  return (await jiti.import(filepath, { default: true })) as Promise<T>
 }
