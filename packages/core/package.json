@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@void-fs/kit": "0.0.1-beta.18",
-    "chokidar": "^4.0.1",
+    "chokidar": "^4.0.3",
     "defu": "^6.1.4",
     "pathe": "^2.0.3",
     "perfect-debounce": "^1.0.0"
