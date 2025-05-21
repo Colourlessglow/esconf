@@ -1,6 +1,34 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v0.5.1...v1.0.0)
+
+### 🚀 特性
+
+- ⚠️  Upgrade minimum node version to 22 ([4f6c4ca](https://github.com/Colourlessglow/esconf/commit/4f6c4ca))
+- ⚠️  Update ESM-only dist ([cf90d88](https://github.com/Colourlessglow/esconf/commit/cf90d88))
+- **dep:** Update dep `pathe@2` `pkg-types@2` ([f8acafb](https://github.com/Colourlessglow/esconf/commit/f8acafb))
+
+### 📖 文档
+
+- Update README.md ([5ef839c](https://github.com/Colourlessglow/esconf/commit/5ef839c))
+- Update README.md ([229c901](https://github.com/Colourlessglow/esconf/commit/229c901))
+
+### 🏡 框架
+
+- Replace `tsup` to `tsdown` ([139be24](https://github.com/Colourlessglow/esconf/commit/139be24))
+
+#### 🚨 破坏性改动
+
+- ⚠️  Upgrade minimum node version to 22 ([4f6c4ca](https://github.com/Colourlessglow/esconf/commit/4f6c4ca))
+- ⚠️  Update ESM-only dist ([cf90d88](https://github.com/Colourlessglow/esconf/commit/cf90d88))
+
+### ❤️ 贡献者
+
+- Whitekite ([@Colourlessglow](http://github.com/Colourlessglow))
+
 ## v0.5.1
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.5.0...v0.5.1)
