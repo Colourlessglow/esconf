@@ -32,7 +32,7 @@
     "@void-fs/kit": "0.0.1-beta.18",
     "chokidar": "^4.0.1",
     "defu": "^6.1.4",
-    "pathe": "^1.1.2",
+    "pathe": "^2.0.3",
     "perfect-debounce": "^1.0.0"
   },
   "publishConfig": {

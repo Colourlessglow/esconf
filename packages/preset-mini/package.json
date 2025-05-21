@@ -34,6 +34,7 @@
     "defu": "^6.1.4",
     "jiti": "^2.3.3",
     "pkg-types": "^1.2.1",
+    "pkg-types": "^2.1.0",
     "rc9": "^2.1.2"
   },
   "publishConfig": {
