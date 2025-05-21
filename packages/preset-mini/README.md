@@ -15,6 +15,7 @@
 [![npm version](https://img.shields.io/npm/v/@esconf/preset-mini?color=orange)](https://npmjs.com/package/@esconf/preset-mini)
 [![npm downloads](https://img.shields.io/npm/dm/@esconf/preset-mini?color=orange)](https://npm.chart.dev/@esconf/preset-mini)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@esconf/preset-mini?color=orange)](https://bundlephobia.com/package/@esconf/preset-mini)
+[![install size](https://badgen.net/packagephobia/install/@esconf/preset-mini?color=orange)](https://packagephobia.com/result?p=@esconf/preset-mini)
 [![license](https://img.shields.io/github/license/Colourlessglow/esconf?color=orange)](https://github.com/Colourlessglow/esconf/blob/true/LICENSE)
 
 <!-- /automd -->
