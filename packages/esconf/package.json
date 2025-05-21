@@ -14,8 +14,8 @@
   "types": "./dist/index.d.ts",
   "module": "./dist/index.js",
   "exports": {
-    ".": "./src/index.ts",
-    "./preset-mini": "./src/preset-mini.ts",
+    ".": "./dist/index.js",
+    "./preset-mini": "./dist/preset-mini.js",
     "./package.json": "./package.json"
   },
   "files": [
