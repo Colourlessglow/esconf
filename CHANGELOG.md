@@ -22,7 +22,7 @@
 
 #### 🚨 破坏性改动
 
-- ⚠️  Upgrade minimum node version to 22 ([4f6c4ca](https://github.com/Colourlessglow/esconf/commit/4f6c4ca))
+- ⚠️  Upgrade minimum node version to 20 ([4f6c4ca](https://github.com/Colourlessglow/esconf/commit/4f6c4ca))
 - ⚠️  Update ESM-only dist ([cf90d88](https://github.com/Colourlessglow/esconf/commit/cf90d88))
 
 ### ❤️ 贡献者
