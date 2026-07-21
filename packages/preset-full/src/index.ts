@@ -17,7 +17,7 @@ import {
 } from './parser'
 import type { PresetFullOption } from './type'
 
-export * from './parser'
+export type { PresetFullOption } from './type'
 
 export const presetFull = <T>(options: PresetFullOption): Preset<T> => {
   const option: PresetFullOption = {

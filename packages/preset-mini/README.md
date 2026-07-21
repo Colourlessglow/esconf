@@ -51,7 +51,8 @@ deno install npm:@esconf/preset-mini
 
 ```ts
 import { loadConfig } from '@esconf/core'
-import { presetMini, tsParser } from '@esconf/preset-mini'
+import { presetMini } from '@esconf/preset-mini'
+import { tsParser } from '@esconf/preset-mini/parser'
 
 const config = await loadConfig({
   presets: [

@@ -1,7 +1,13 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  entry: ['src/index.ts', 'src/preset-mini.ts', 'src/preset-full.ts'],
+  entry: {
+    index: 'src/index.ts',
+    'preset-mini': 'src/preset-mini.ts',
+    'preset-full': 'src/preset-full.ts',
+    'preset-mini/parser': 'src/preset-mini-parser.ts',
+    'preset-full/parser': 'src/preset-full-parser.ts',
+  },
   target: 'node20',
   dts: true,
   clean: true,

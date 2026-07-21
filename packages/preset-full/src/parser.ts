@@ -1,5 +1,5 @@
 import { defineCodeParser, defineIdParser } from '@esconf/core'
-import { jsonParser, jsParser, tsParser } from '@esconf/preset-mini'
+import { jsonParser, jsParser, tsParser } from '@esconf/preset-mini/parser'
 import {
   type JSON5ParseOptions,
   type JSONCParseOptions,

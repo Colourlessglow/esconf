@@ -61,7 +61,7 @@ deno install npm:esconf
 
 ```ts
 import { loadConfig, presetFull } from 'esconf'
-import { tsParser } from 'esconf/preset-full'
+import { tsParser } from 'esconf/preset-full/parser'
 
 const config = await loadConfig({
   presets: [

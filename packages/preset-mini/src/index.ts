@@ -3,7 +3,6 @@ import { jsonParser, jsParser, tsParser } from './parser'
 import type { TsImportOptions } from './tsImport'
 import type { JSONParseOptions, PresetMiniOption } from './type'
 
-export * from './parser'
 export type { TsImportOptions } from './tsImport'
 export type { JSONParseOptions, PresetMiniOption } from './type'
 

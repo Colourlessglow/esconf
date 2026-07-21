@@ -14,7 +14,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./preset-full": "./dist/preset-full.js",
+    "./preset-full/parser": "./dist/preset-full/parser.js",
     "./preset-mini": "./dist/preset-mini.js",
+    "./preset-mini/parser": "./dist/preset-mini/parser.js",
     "./package.json": "./package.json"
   },
   "files": [
