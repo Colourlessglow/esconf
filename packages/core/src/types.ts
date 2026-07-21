@@ -1,9 +1,8 @@
-import type { ChokidarOptions } from 'chokidar'
-
 /**
  * 基于文件路径解析
  */
 export type CustomFallbackParser<T> = (id: string) => Promise<T | undefined> | T | undefined
+
 /**
  * 基于文件文本解析
  */
@@ -114,22 +113,4 @@ export interface LoadESConfResult<T> {
    * 所有解析的配置文件数据
    */
   layers: LoadESConfResultLayer<T>[]
-}
-
-export interface ESConfWatchOptions<T> extends ESConfOptions<T> {
-  chokidarOptions?: ChokidarOptions
-  /**
-   * 监听更改防抖
-   * @default 100
-   */
-  debounce?: number | false
-  /**
-   * config 修改事件
-   * @param result
-   */
-  onChange?: (newConfig: LoadESConfResult<T>, oldConfig: LoadESConfResult<T>) => any
-}
-
-export interface ESConfWatchResult<T> extends LoadESConfResult<T> {
-  unwatch: () => void
 }

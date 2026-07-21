@@ -27,10 +27,8 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "chokidar": "catalog:",
     "defu": "catalog:",
     "pathe": "catalog:",
-    "perfect-debounce": "catalog:",
     "unconfig-core": "catalog:"
   },
   "publishConfig": {

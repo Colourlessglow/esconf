@@ -1,5 +1,5 @@
 {
-  "name": "esconf",
+  "name": "@esconf/watch",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -13,8 +13,6 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./preset-full": "./dist/preset-full.js",
-    "./preset-mini": "./dist/preset-mini.js",
     "./package.json": "./package.json"
   },
   "files": [
@@ -23,15 +21,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Colourlessglow/esconf.git",
-    "directory": "packages/esconf"
+    "directory": "packages/watch"
   },
   "scripts": {
     "build": "tsdown"
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
-    "@esconf/preset-mini": "workspace:*",
-    "@esconf/watch": "workspace:*"
+    "chokidar": "catalog:",
+    "perfect-debounce": "catalog:"
   },
   "publishConfig": {
     "access": "public"
