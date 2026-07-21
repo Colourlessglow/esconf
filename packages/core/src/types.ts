@@ -78,8 +78,9 @@ export interface ESConfOptions<T> {
 /**
  * @inner
  */
-export interface ResolveESConfOptions<T>
-  extends Required<Omit<ESConfOptions<T>, 'default' | 'presets' | 'layers'>> {
+export interface ResolveESConfOptions<T> extends Required<
+  Omit<ESConfOptions<T>, 'default' | 'presets' | 'layers'>
+> {
   /**
    * 默认数据
    */
