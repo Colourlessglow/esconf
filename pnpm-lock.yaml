@@ -108,18 +108,12 @@ importers:
 
   packages/core:
     dependencies:
-      chokidar:
-        specifier: 'catalog:'
-        version: 4.0.3
       defu:
         specifier: 'catalog:'
         version: 6.1.7
       pathe:
         specifier: 'catalog:'
         version: 2.0.3
-      perfect-debounce:
-        specifier: 'catalog:'
-        version: 1.0.0
       unconfig-core:
         specifier: 'catalog:'
         version: 7.5.0
@@ -129,11 +123,17 @@ importers:
       '@esconf/core':
         specifier: workspace:*
         version: link:../core
+      '@esconf/preset-full':
+        specifier: workspace:*
+        version: link:../preset-full
       '@esconf/preset-mini':
         specifier: workspace:*
         version: link:../preset-mini
+      '@esconf/watch':
+        specifier: workspace:*
+        version: link:../watch
 
-  packages/preset-mini:
+  packages/preset-full:
     dependencies:
       '@esconf/core':
         specifier: workspace:*
@@ -153,6 +153,30 @@ importers:
       rc9:
         specifier: 'catalog:'
         version: 2.1.2
+
+  packages/preset-mini:
+    dependencies:
+      '@esconf/core':
+        specifier: workspace:*
+        version: link:../core
+      defu:
+        specifier: 'catalog:'
+        version: 6.1.7
+      jiti:
+        specifier: 'catalog:'
+        version: 2.7.0
+
+  packages/watch:
+    dependencies:
+      '@esconf/core':
+        specifier: workspace:*
+        version: link:../core
+      chokidar:
+        specifier: 'catalog:'
+        version: 4.0.3
+      perfect-debounce:
+        specifier: 'catalog:'
+        version: 1.0.0
 
 packages:
 
