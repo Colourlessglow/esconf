@@ -5,5 +5,10 @@
   "trailingComma": "es5",
   "proseWrap": "never",
   "sortPackageJson": false,
-  "ignorePatterns": [".agents/**", "CHANGELOG.md"]
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "rangeStart": 0,
+  "ignorePatterns": [".agents/**", "CHANGELOG.md", "**/README.md"]
 }
