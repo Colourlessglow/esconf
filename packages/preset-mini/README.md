@@ -5,7 +5,7 @@
 内置解析器一览
 
 - `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
-- `.json` 基于 [confbox](https://github.com/unjs/confbox) 导入
+- `.json` 基于 `JSON.parse` 原生导入
 
 > 更多格式（`.toml` `.yaml` `.jsonc` `.json5` rc 文件等）请使用全量预设 [`@esconf/preset-full`](https://npmjs.com/package/@esconf/preset-full)
 

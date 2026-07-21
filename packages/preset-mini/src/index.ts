@@ -1,8 +1,7 @@
 import type { ESConfLayer, Preset } from '@esconf/core'
-import type { JSONParseOptions } from 'confbox'
 import { jsonParser, jsParser, tsParser } from './parser'
 import type { TsImportOptions } from './tsImport'
-import type { PresetMiniOption } from './type'
+import type { JSONParseOptions, PresetMiniOption } from './type'
 
 export * from './parser'
 

@@ -9,7 +9,7 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 `esconf/preset-mini` 最小预设，仅加载项目级 `json`、`js`、`ts` 配置文件
 
 - `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
-- `.json` 基于 [confbox](https://github.com/unjs/confbox) 导入
+- `.json` 基于 `JSON.parse` 原生导入
 
 `esconf/preset-full` 全量预设，在最小预设基础上额外支持
 

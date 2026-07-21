@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
-    "confbox": "catalog:",
     "defu": "catalog:",
     "jiti": "catalog:"
   },

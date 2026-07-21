@@ -1,5 +1,14 @@
-import type { JSONParseOptions } from 'confbox'
 import type { TsImportOptions } from './tsImport'
+
+/**
+ * json 解析配置
+ */
+export interface JSONParseOptions {
+  /**
+   * 一个转换结果的函数，会为对象的每个成员调用此函数
+   */
+  reviver?: (this: any, key: string, value: any) => any
+}
 
 /**
  * 最小预设选项
