@@ -6,11 +6,16 @@ API 设计参考自 [antfu/unconfig](https://github.com/antfu/unconfig)
 
 `esconf` 在使用时更像 [`unocss`](https://unocss.dev/) 需要 core + presets 形式组合
 
-`esconf/preset-mini` 最小预设内置解析器一览
+`esconf/preset-mini` 最小预设，仅加载项目级 `json`、`js`、`ts` 配置文件
 
 - `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
-- `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
+- `.json` 基于 [confbox](https://github.com/unjs/confbox) 导入
+
+`esconf/preset-full` 全量预设，在最小预设基础上额外支持
+
+- `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
 - `.${name}rc` `${homedir}/.${name}rc` 基于 [rc9](https://github.com/unjs/rc9) 导入
+- `package.json` 基于 [pkg-types](https://github.com/unjs/pkg-types) 导入
 
 > 注意： 预设 js，ts 解析只包含 es module 的解析
 
@@ -53,12 +58,12 @@ deno install npm:esconf
 ## 简单使用
 
 ```ts
-import { loadConfig, presetMini } from 'esconf'
-import { tsParser } from 'esconf/preset-mini'
+import { loadConfig, presetFull } from 'esconf'
+import { tsParser } from 'esconf/preset-full'
 
 const config = await loadConfig({
   presets: [
-    presetMini({
+    presetFull({
       // 配置如下会解析 vite.config.{cts,ts,mts} vite.{toml,....}
       name: 'vite',
       configName: 'config',
@@ -85,7 +90,7 @@ const config = await loadConfig({
   default: { defaultValue: 'value' },
   cwd: process.cwd(),
   // 如果某个 layer 命名了，可以用 layer 的名称在运行时排除
-  excludeLayer: ['preset-mini:toml'],
+  excludeLayer: ['preset-full:toml'],
   // 如果 excludeLayer 的 类型时 funcition ,则可以根据 layer 配置的特征自行决定运行时是否排除
   excludeLayer: (layer) => layer.extensions.includes('yaml'),
 })

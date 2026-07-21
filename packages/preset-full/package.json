@@ -1,5 +1,5 @@
 {
-  "name": "@esconf/preset-mini",
+  "name": "@esconf/preset-full",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -21,7 +21,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Colourlessglow/esconf.git",
-    "directory": "packages/preset-mini"
+    "directory": "packages/preset-full"
   },
   "scripts": {
     "build": "tsdown"
@@ -30,7 +30,9 @@
     "@esconf/core": "workspace:*",
     "confbox": "catalog:",
     "defu": "catalog:",
-    "jiti": "catalog:"
+    "jiti": "catalog:",
+    "pkg-types": "catalog:",
+    "rc9": "catalog:"
   },
   "publishConfig": {
     "access": "public"

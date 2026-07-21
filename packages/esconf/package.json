@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
+    "@esconf/preset-full": "workspace:*",
     "@esconf/preset-mini": "workspace:*",
     "@esconf/watch": "workspace:*"
   },

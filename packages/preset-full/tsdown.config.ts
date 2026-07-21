@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  entry: ['src/index.ts', 'src/preset-mini.ts', 'src/preset-full.ts'],
+  entry: ['src/index.ts'],
   target: 'node20',
   dts: true,
   clean: true,
@@ -9,9 +9,9 @@ export default defineConfig({
   shims: true,
   publint: true,
   unused: true,
-  exports: true,
-  fixedExtension: false,
   deps: {
     skipNodeModulesBundle: true,
   },
+  exports: true,
+  fixedExtension: false,
 })

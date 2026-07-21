@@ -2,12 +2,31 @@ import { join } from 'node:path'
 import { homedir } from 'node:os'
 import { expect, test } from 'vitest'
 import { loadConfig } from '../src'
+import { presetFull } from '../src/preset-full'
 import { presetMini } from '../src/preset-mini'
 
 test('load config from preset-mini', async () => {
   const config = await loadConfig({
+    presets: [presetMini({ name: 'vrx', configName: 'config' })],
+    cwd: join(import.meta.dirname, 'configs'),
+    default: { defaultValue: 'value' },
+  })
+  expect(config.config).toEqual({ type: 'mts', defaultValue: 'value' })
+  expect(config.layers).toEqual([
+    { name: 'vrx.config.mts', config: { type: 'mts' } },
+    { name: 'vrx.config.ts', config: { type: 'ts' } },
+    { name: 'vrx.config.cts', config: { type: 'cts' } },
+    { name: 'vrx.config.mjs', config: { type: 'mjs' } },
+    { name: 'vrx.config.js', config: { type: 'js' } },
+    { name: 'vrx.config.cjs', config: { type: 'cjs' } },
+    { name: 'vrx.json', config: { type: 'json' } },
+  ])
+})
+
+test('load config from preset-full', async () => {
+  const config = await loadConfig({
     presets: [
-      presetMini({ name: 'vrx', configName: 'config', 'package.json': false, globalRc: true }),
+      presetFull({ name: 'vrx', configName: 'config', 'package.json': false, globalRc: true }),
     ],
     cwd: join(import.meta.dirname, 'configs'),
     default: { defaultValue: 'value' },
@@ -30,9 +49,9 @@ test('load config from preset-mini', async () => {
   ])
 })
 
-test('load config from preset-mini with excludeLayer function', async () => {
+test('load config from preset-full with excludeLayer function', async () => {
   const config = await loadConfig({
-    presets: [presetMini({ name: 'author' })],
+    presets: [presetFull({ name: 'author' })],
     excludeLayer(layer) {
       return !layer.name?.endsWith('package.json')
     },
@@ -43,11 +62,11 @@ test('load config from preset-mini with excludeLayer function', async () => {
   ])
 })
 
-test('load config from preset-mini with excludeLayer', async () => {
+test('load config from preset-full with excludeLayer', async () => {
   const config = await loadConfig({
-    presets: [presetMini({ name: 'author' })],
+    presets: [presetFull({ name: 'author' })],
     excludeLayer: ['ts', 'js', 'toml', 'yaml', 'yml', 'jsonc', 'json5', 'json'].map(
-      (item) => `preset-mini:${item}`
+      (item) => `preset-full:${item}`
     ),
   })
   expect(config.config).toEqual({ name: 'whitekite', email: '1075790909@qq.com' })
