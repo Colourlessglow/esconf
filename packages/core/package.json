@@ -24,14 +24,14 @@
     "directory": "packages/core"
   },
   "scripts": {
-    "build": "automd && tsdown"
+    "build": "tsdown"
   },
   "dependencies": {
-    "@void-fs/kit": "0.0.1-beta.18",
-    "chokidar": "^4.0.3",
-    "defu": "^6.1.4",
-    "pathe": "^2.0.3",
-    "perfect-debounce": "^1.0.0"
+    "@void-fs/kit": "catalog:",
+    "chokidar": "catalog:",
+    "defu": "catalog:",
+    "pathe": "catalog:",
+    "perfect-debounce": "catalog:"
   },
   "publishConfig": {
     "access": "public"

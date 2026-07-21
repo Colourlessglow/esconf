@@ -24,15 +24,15 @@
     "directory": "packages/preset-mini"
   },
   "scripts": {
-    "build": "automd && tsdown"
+    "build": "tsdown"
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
-    "confbox": "^0.2.2",
-    "defu": "^6.1.4",
-    "jiti": "^2.4.2",
-    "pkg-types": "^2.1.0",
-    "rc9": "^2.1.2"
+    "confbox": "catalog:",
+    "defu": "catalog:",
+    "jiti": "catalog:",
+    "pkg-types": "catalog:",
+    "rc9": "catalog:"
   },
   "publishConfig": {
     "access": "public"

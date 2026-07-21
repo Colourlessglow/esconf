@@ -11,7 +11,7 @@
   },
   "repository": "https://github.com/Colourlessglow/esconf",
   "scripts": {
-    "build": "automd && turbo run build",
+    "build": "turbo run build",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "lint": "oxlint",
@@ -20,17 +20,16 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1",
-    "@vill-v/bumpp-github": "^5.0.0",
-    "@vill-v/tsconfig": "^2.0.0",
-    "automd": "^0.4.3",
-    "oxfmt": "^0.59.0",
-    "oxlint": "^1.74.0",
-    "publint": "^0.3.21",
-    "tsdown": "^0.22.12",
-    "turbo": "^2.10.5",
-    "typescript": "^7.0.2",
-    "unplugin-unused": "^0.5.7",
-    "vitest": "^4.1.10"
+    "@types/node": "catalog:dev",
+    "@vill-v/bumpp-github": "catalog:dev",
+    "@vill-v/tsconfig": "catalog:dev",
+    "oxfmt": "catalog:dev",
+    "oxlint": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "turbo": "catalog:dev",
+    "typescript": "catalog:dev",
+    "unplugin-unused": "catalog:dev",
+    "vitest": "catalog:dev"
   }
 }

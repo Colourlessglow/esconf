@@ -4,3 +4,26 @@ packages:
 allowBuilds:
   '@parcel/watcher': true
   unrs-resolver: true
+catalog:
+  '@void-fs/kit': 0.0.1-beta.18
+  chokidar: ^4.0.3
+  confbox: ^0.2.2
+  defu: ^6.1.4
+  jiti: ^2.4.2
+  pathe: ^2.0.3
+  perfect-debounce: ^1.0.0
+  pkg-types: ^2.1.0
+  rc9: ^2.1.2
+catalogs:
+  dev:
+    '@types/node': ^26.1.1
+    '@vill-v/bumpp-github': ^5.0.0
+    '@vill-v/tsconfig': ^2.0.0
+    oxfmt: ^0.59.0
+    oxlint: ^1.74.0
+    publint: ^0.3.21
+    tsdown: ^0.22.12
+    turbo: ^2.10.5
+    typescript: ^7.0.2
+    unplugin-unused: ^0.5.7
+    vitest: ^4.1.10
