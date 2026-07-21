@@ -1,6 +1,48 @@
 # Changelog
 
 
+## v2.0.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v1.0.0...v2.0.0)
+
+### 🚀 特性
+
+- **preset:** ⚠️  Split presets into minimal mini and full ([31f7ce9](https://github.com/Colourlessglow/esconf/commit/31f7ce9))
+
+### 🩹 修复
+
+- **build:** Align package exports/types with tsdown 0.22 output ([b6100b7](https://github.com/Colourlessglow/esconf/commit/b6100b7))
+
+### 💅 重构
+
+- **core:** ⚠️  Load configs via unconfig-core ([578cd63](https://github.com/Colourlessglow/esconf/commit/578cd63))
+- **core:** ⚠️  Extract watchConfig into @esconf/watch ([1fbc0ea](https://github.com/Colourlessglow/esconf/commit/1fbc0ea))
+- **preset-mini:** ⚠️  Parse json with native JSON.parse ([71479eb](https://github.com/Colourlessglow/esconf/commit/71479eb))
+- **preset-full:** Reuse parsers from @esconf/preset-mini ([c69f15c](https://github.com/Colourlessglow/esconf/commit/c69f15c))
+- **preset:** ⚠️  Export parsers from the ./parser subpath ([bc4a0c8](https://github.com/Colourlessglow/esconf/commit/bc4a0c8))
+
+### 🏡 框架
+
+- Update CHANGELOG.md ([8840b38](https://github.com/Colourlessglow/esconf/commit/8840b38))
+- Migrate formatter from prettier to oxfmt ([27bcc2a](https://github.com/Colourlessglow/esconf/commit/27bcc2a))
+- Migrate linter from eslint to oxlint ([6f07c95](https://github.com/Colourlessglow/esconf/commit/6f07c95))
+- Switch node version manager to mise and add editor/agent configs ([b644844](https://github.com/Colourlessglow/esconf/commit/b644844))
+- Remove obsolete vitest workspace file ([c3dcf69](https://github.com/Colourlessglow/esconf/commit/c3dcf69))
+- Ignore automd-generated READMEs in oxfmt ([f0ed441](https://github.com/Colourlessglow/esconf/commit/f0ed441))
+- **config:** Remove inlay_hints and refactor tsdown config ([6f59692](https://github.com/Colourlessglow/esconf/commit/6f59692))
+
+#### 🚨 破坏性改动
+
+- **preset:** ⚠️  Split presets into minimal mini and full ([31f7ce9](https://github.com/Colourlessglow/esconf/commit/31f7ce9))
+- **core:** ⚠️  Load configs via unconfig-core ([578cd63](https://github.com/Colourlessglow/esconf/commit/578cd63))
+- **core:** ⚠️  Extract watchConfig into @esconf/watch ([1fbc0ea](https://github.com/Colourlessglow/esconf/commit/1fbc0ea))
+- **preset-mini:** ⚠️  Parse json with native JSON.parse ([71479eb](https://github.com/Colourlessglow/esconf/commit/71479eb))
+- **preset:** ⚠️  Export parsers from the ./parser subpath ([bc4a0c8](https://github.com/Colourlessglow/esconf/commit/bc4a0c8))
+
+### ❤️ 贡献者
+
+- Whitekite <xuxjigsaw@qq.com>
+
 ## v1.0.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v0.5.1...v1.0.0)
