@@ -9,7 +9,9 @@ export default defineConfig({
   shims: true,
   publint: true,
   unused: true,
-  skipNodeModulesBundle: true,
   exports: true,
-  silent: true,
+  fixedExtension: false,
+  deps: {
+    skipNodeModulesBundle: true,
+  },
 })
