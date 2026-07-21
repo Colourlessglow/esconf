@@ -18,7 +18,7 @@ catalog:
 catalogs:
   dev:
     '@types/node': ^26.1.1
-    '@vill-v/bumpp-github': ^5.0.0
+    '@vill-v/bumpp-github': ^5.0.1
     '@vill-v/tsconfig': ^2.0.0
     oxfmt: ^0.59.0
     oxlint: ^1.74.0
@@ -28,3 +28,6 @@ catalogs:
     typescript: ^7.0.2
     unplugin-unused: ^0.5.7
     vitest: ^4.1.10
+minimumReleaseAgeExclude:
+  - '@vill-v/bumpp-github@5.0.1'
+  - '@vill-v/bumpp@5.0.1'

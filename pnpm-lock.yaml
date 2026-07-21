@@ -38,8 +38,8 @@ catalogs:
       specifier: ^26.1.1
       version: 26.1.1
     '@vill-v/bumpp-github':
-      specifier: ^5.0.0
-      version: 5.0.0
+      specifier: ^5.0.1
+      version: 5.0.1
     '@vill-v/tsconfig':
       specifier: ^2.0.0
       version: 2.0.0
@@ -77,7 +77,7 @@ importers:
         version: 26.1.1
       '@vill-v/bumpp-github':
         specifier: catalog:dev
-        version: 5.0.0(@types/node@26.1.1)
+        version: 5.0.1(@types/node@26.1.1)
       '@vill-v/tsconfig':
         specifier: catalog:dev
         version: 2.0.0(typescript@7.0.2)
@@ -875,13 +875,13 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@vill-v/bumpp-github@5.0.0':
-    resolution: {integrity: sha512-R4m+N7IEwAtNMTZIkS0UzeCfl3k9lswFJB9jgCYmgc9/tcRMkdE/1qtup3LDFPh+5Umzzb8Gg8XkAtvBTOuHiw==}
+  '@vill-v/bumpp-github@5.0.1':
+    resolution: {integrity: sha512-3tf8fjDkmobUq5noHFsGFky+u3EEiKH6fiKZNAroWKEc2DrRru16jnuGBoxbqRPay4Ez8Ralh5erh5s3MNv5sw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
-  '@vill-v/bumpp@5.0.0':
-    resolution: {integrity: sha512-+Se+3tu8War2GbSx4bfXhZQUGw9SmWyyODirij/GdTTYtl+BfeqMyDz+5Wn3OJbuUOJFmftdYvsvx0/bm/EM4Q==}
+  '@vill-v/bumpp@5.0.1':
+    resolution: {integrity: sha512-xD0Fh+K/Kkp7SCZB+CNsrDXRuZikJGaMWXIU3hBjUOgfH0D7Fw22VQMEwIw628wwtAcyURvRxo/Mx5KcFL+CbA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -2154,9 +2154,9 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vill-v/bumpp-github@5.0.0(@types/node@26.1.1)':
+  '@vill-v/bumpp-github@5.0.1(@types/node@26.1.1)':
     dependencies:
-      '@vill-v/bumpp': 5.0.0(@types/node@26.1.1)
+      '@vill-v/bumpp': 5.0.1(@types/node@26.1.1)
       consola: 3.4.2
       ofetch: 1.5.1
       tinyexec: 1.2.4
@@ -2164,7 +2164,7 @@ snapshots:
       - '@types/node'
       - magicast
 
-  '@vill-v/bumpp@5.0.0(@types/node@26.1.1)':
+  '@vill-v/bumpp@5.0.1(@types/node@26.1.1)':
     dependencies:
       '@inquirer/password': 5.1.1(@types/node@26.1.1)
       bumpp: 11.1.0
