@@ -6,9 +6,6 @@ settings:
 
 catalogs:
   default:
-    '@void-fs/kit':
-      specifier: 0.0.1-beta.18
-      version: 0.0.1-beta.18
     chokidar:
       specifier: ^4.0.3
       version: 4.0.3
@@ -33,6 +30,9 @@ catalogs:
     rc9:
       specifier: ^2.1.2
       version: 2.1.2
+    unconfig-core:
+      specifier: ^7.5.0
+      version: 7.5.0
   dev:
     '@types/node':
       specifier: ^26.1.1
@@ -108,9 +108,6 @@ importers:
 
   packages/core:
     dependencies:
-      '@void-fs/kit':
-        specifier: 'catalog:'
-        version: 0.0.1-beta.18
       chokidar:
         specifier: 'catalog:'
         version: 4.0.3
@@ -123,6 +120,9 @@ importers:
       perfect-debounce:
         specifier: 'catalog:'
         version: 1.0.0
+      unconfig-core:
+        specifier: 'catalog:'
+        version: 7.5.0
 
   packages/esconf:
     dependencies:

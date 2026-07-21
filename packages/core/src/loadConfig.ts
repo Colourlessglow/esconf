@@ -1,5 +1,7 @@
-import { isAbsolute, join } from 'pathe'
-import { exists, isFile, readFile } from '@void-fs/kit'
+import { readFile } from 'node:fs/promises'
+import { dirname, resolve } from 'node:path'
+import { createConfigCoreLoader } from 'unconfig-core'
+import { normalize } from 'pathe'
 import { defu } from 'defu'
 import { resolveOptions } from './options'
 import type {
@@ -21,51 +23,47 @@ const findFiles = <T>(layer: ESConfLayer<T>) => {
   return files
 }
 
-const getConfigWithParser = async <T>(layerParser: CustomParser<T>, filepath: string) => {
-  if (typeof layerParser === 'function') {
-    return layerParser(filepath)
+/**
+ * 将 esconf 的解析规则转换为 unconfig-core 的解析函数
+ * 解析结果为假值时遵循 unconfig-core 的语义，视为未解析到配置
+ */
+const wrapParser = <T>(layerParser: CustomParser<T>) => {
+  if (typeof layerParser === 'function' || layerParser.type === 'id') {
+    const parser = typeof layerParser === 'function' ? layerParser : layerParser.parser
+    return (filepath: string) => parser(normalize(filepath))
   }
-  if (layerParser.type === 'id') {
-    return layerParser.parser(filepath)
-  }
-  if (layerParser.type === 'code') {
-    const code = await readFile(filepath, { cwd: '' })
-    return layerParser.parser(code, filepath)
+  return async (filepath: string) => {
+    const code = await readFile(filepath, 'utf8')
+    return layerParser.parser(code, normalize(filepath))
   }
 }
 
-const parseFile = async <T>(
-  filepath: string,
+const findLayer = async <T>(
   layer: ESConfLayer<T>,
   cwd: string
-): Promise<LoadESConfResultLayer<T>> => {
-  try {
-    const id = join(isAbsolute(filepath) ? '' : cwd, filepath)
-    if ((await exists(id, { cwd: '' })) && (await isFile(id, { cwd: '' }))) {
-      const config = await getConfigWithParser(layer.parser, id)
-      return {
-        name: filepath,
-        config,
-      }
-    }
-    return {
-      name: filepath,
-      config: void 0,
-    }
-  } catch (e) {
-    if (layer.throwOnError) {
-      throw e
-    }
-    return {
-      name: filepath,
-      config: void 0,
-    }
-  }
-}
-
-const findlayer = <T>(layer: ESConfLayer<T>, cwd: string) => {
-  const files = findFiles(layer)
-  return files.map((filepath) => parseFile(filepath, layer, cwd))
+): Promise<LoadESConfResultLayer<T>[]> => {
+  const parent = dirname(cwd)
+  const loader = createConfigCoreLoader<T>({
+    cwd,
+    // unconfig-core 默认向上级目录查找，通过 stopAt 限制只在 cwd 内查找
+    // cwd 为根目录时 dirname(cwd) === cwd，此时使用空字符串保证根目录也能被查找
+    stopAt: parent === cwd ? '' : parent,
+    multiple: true,
+    sources: [
+      {
+        files: layer.files,
+        extensions: layer.extensions,
+        parser: wrapParser(layer.parser),
+        skipOnError: !layer.throwOnError,
+      },
+    ],
+  })
+  const found = await loader.load()
+  const configMap = new Map(found.map((item) => [normalize(item.source), item.config]))
+  return findFiles(layer).map((filepath) => ({
+    name: filepath,
+    config: configMap.get(normalize(resolve(cwd, filepath))),
+  }))
 }
 
 const mergeLayers = <T>(layers: LoadESConfResultLayer<T>[], option: ResolveESConfOptions<T>): T => {
@@ -88,11 +86,13 @@ const excludeLayers = <T>(
 
 export const loadConfig = async <T>(option: ESConfOptions<T>): Promise<LoadESConfResult<T>> => {
   const _option = resolveOptions(option)
-  const layers = await Promise.all(
-    excludeLayers(_option.layers, _option.excludeLayer)
-      .map((layer) => findlayer(layer, _option.cwd))
-      .flat()
-  )
+  const layers = (
+    await Promise.all(
+      excludeLayers(_option.layers, _option.excludeLayer).map((layer) =>
+        findLayer(layer, _option.cwd)
+      )
+    )
+  ).flat()
 
   const config = mergeLayers(layers, _option)
 
