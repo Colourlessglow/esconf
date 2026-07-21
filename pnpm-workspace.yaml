@@ -1,7 +1,6 @@
 packages:
   - packages/*
   - playground
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-  - unrs-resolver
+allowBuilds:
+  '@parcel/watcher': true
+  unrs-resolver: true
