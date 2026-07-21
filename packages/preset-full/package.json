@@ -28,9 +28,8 @@
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
+    "@esconf/preset-mini": "workspace:*",
     "confbox": "catalog:",
-    "defu": "catalog:",
-    "jiti": "catalog:",
     "pkg-types": "catalog:",
     "rc9": "catalog:"
   },

@@ -4,8 +4,8 @@
 
 内置解析器一览
 
-- `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` 基于 [jiti@2](https://unjs.io/packages/jiti) 导入
-- `.json` `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
+- `.mts` `.ts` `.cts` `.mjs` `.js` `.cjs` `.json` 复用 [`@esconf/preset-mini`](https://npmjs.com/package/@esconf/preset-mini) 的解析器
+- `.jsonc` `.json5` `.yaml` `.yml` `.toml` 基于 [confbox](https://github.com/unjs/confbox) 导入
 - `.${name}rc` `${homedir}/.${name}rc` 基于 [rc9](https://github.com/unjs/rc9) 导入
 - `package.json` 基于 [pkg-types](https://github.com/unjs/pkg-types) 导入
 
@@ -39,7 +39,8 @@ deno install npm:@esconf/preset-full
 
 ```ts
 import { loadConfig } from '@esconf/core'
-import { presetFull, tsParser } from '@esconf/preset-full'
+import { presetFull } from '@esconf/preset-full'
+import { tsParser } from '@esconf/preset-full/parser'
 
 const config = await loadConfig({
   presets: [

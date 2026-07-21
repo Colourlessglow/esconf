@@ -1,10 +1,9 @@
 import { defineCodeParser, defineIdParser } from '@esconf/core'
+import { jsonParser, jsParser, tsParser } from '@esconf/preset-mini'
 import {
   type JSON5ParseOptions,
   type JSONCParseOptions,
-  type JSONParseOptions,
   type YAMLParseOptions,
-  parseJSON,
   parseJSON5,
   parseJSONC,
   parseTOML,
@@ -12,11 +11,8 @@ import {
 } from 'confbox'
 import { read, readUser } from 'rc9'
 import { readPackageJSON } from 'pkg-types'
-import { TsImportOptions, tsImport } from './tsImport'
 
-export const jsonParser = defineCodeParser<JSONParseOptions>((option) => {
-  return (code) => parseJSON(code, option)
-})
+export { jsonParser, jsParser, tsParser }
 
 export const jsoncParser = defineCodeParser<JSONCParseOptions>((option) => {
   return (code) => parseJSONC(code, option)
@@ -34,10 +30,6 @@ export const tomlParser = defineCodeParser(() => {
   return (code) => parseTOML(code)
 })
 
-export const tsParser = defineIdParser<TsImportOptions>((option) => {
-  return (id) => tsImport<any>(id, option)
-})
-
 export const packageJsonParser = defineIdParser<string>((name) => {
   return async () => {
     const pkg = await readPackageJSON()
@@ -52,5 +44,3 @@ export const rcFileParser = defineIdParser<string>((name) => {
 export const globalRcFileParser = defineIdParser<string>((name) => {
   return () => readUser<any>({ name: `.${name}rc`, flat: false })
 })
-
-export { tsParser as jsParser }

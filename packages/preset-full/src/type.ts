@@ -1,10 +1,5 @@
-import type {
-  JSON5ParseOptions,
-  JSONCParseOptions,
-  JSONParseOptions,
-  YAMLParseOptions,
-} from 'confbox'
-import type { TsImportOptions } from './tsImport'
+import type { JSONParseOptions, TsImportOptions } from '@esconf/preset-mini'
+import type { JSON5ParseOptions, JSONCParseOptions, YAMLParseOptions } from 'confbox'
 
 /**
  * 全量预设选项

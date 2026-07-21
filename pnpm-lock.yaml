@@ -138,15 +138,12 @@ importers:
       '@esconf/core':
         specifier: workspace:*
         version: link:../core
+      '@esconf/preset-mini':
+        specifier: workspace:*
+        version: link:../preset-mini
       confbox:
         specifier: 'catalog:'
         version: 0.2.4
-      defu:
-        specifier: 'catalog:'
-        version: 6.1.7
-      jiti:
-        specifier: 'catalog:'
-        version: 2.7.0
       pkg-types:
         specifier: 'catalog:'
         version: 2.3.1

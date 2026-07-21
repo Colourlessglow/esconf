@@ -1,12 +1,8 @@
 import { join } from 'node:path'
 import { homedir } from 'node:os'
 import type { ESConfLayer, Preset } from '@esconf/core'
-import type {
-  JSON5ParseOptions,
-  JSONCParseOptions,
-  JSONParseOptions,
-  YAMLParseOptions,
-} from 'confbox'
+import type { JSONParseOptions, TsImportOptions } from '@esconf/preset-mini'
+import type { JSON5ParseOptions, JSONCParseOptions, YAMLParseOptions } from 'confbox'
 import {
   globalRcFileParser,
   jsParser,
@@ -19,7 +15,6 @@ import {
   tsParser,
   yamlParser,
 } from './parser'
-import type { TsImportOptions } from './tsImport'
 import type { PresetFullOption } from './type'
 
 export * from './parser'

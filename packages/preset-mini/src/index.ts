@@ -4,6 +4,8 @@ import type { TsImportOptions } from './tsImport'
 import type { JSONParseOptions, PresetMiniOption } from './type'
 
 export * from './parser'
+export type { TsImportOptions } from './tsImport'
+export type { JSONParseOptions, PresetMiniOption } from './type'
 
 export const presetMini = <T>(options: PresetMiniOption): Preset<T> => {
   const configFile = [options.name, options.configName].filter(Boolean).join('.')
