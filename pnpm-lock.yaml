@@ -159,6 +159,7 @@ importers:
       defu:
         specifier: 'catalog:'
         version: 6.1.7
+    devDependencies:
       jiti:
         specifier: 'catalog:'
         version: 2.7.0

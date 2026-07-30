@@ -1,5 +1,6 @@
 import { defineCodeParser, defineIdParser } from '@esconf/core'
-import { TsImportOptions, tsImport } from './tsImport'
+import { nativeImport } from './nativeImport'
+import { type TsImportOptions, tsImport } from './tsImport'
 import type { JSONParseOptions } from './type'
 
 export const jsonParser = defineCodeParser<JSONParseOptions>((option) => {
@@ -10,4 +11,6 @@ export const tsParser = defineIdParser<TsImportOptions>((option) => {
   return (id) => tsImport<any>(id, option)
 })
 
-export { tsParser as jsParser }
+export const jsParser = defineIdParser(() => {
+  return (id) => nativeImport<any>(id)
+})

@@ -29,8 +29,18 @@
   },
   "dependencies": {
     "@esconf/core": "workspace:*",
-    "defu": "catalog:",
+    "defu": "catalog:"
+  },
+  "devDependencies": {
     "jiti": "catalog:"
+  },
+  "peerDependencies": {
+    "jiti": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "jiti": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
