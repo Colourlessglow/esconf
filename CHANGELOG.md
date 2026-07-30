@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v3.0.0
+
+[compare changes](https://github.com/Colourlessglow/esconf/compare/v2.0.0...v3.0.0)
+
+### 🚀 特性
+
+- **preset-mini:** ⚠️  Load configs natively and make jiti an optional peer dependency ([510dd22](https://github.com/Colourlessglow/esconf/commit/510dd22))
+
+### 💅 重构
+
+- **core:** Inline path normalize and drop pathe dependency ([c3a2fba](https://github.com/Colourlessglow/esconf/commit/c3a2fba))
+
+### 📦 打包
+
+- **deps:** Update dependencies (chokidar 5, perfect-debounce 2, rc9 3) ([c8e4536](https://github.com/Colourlessglow/esconf/commit/c8e4536))
+
+#### 🚨 破坏性改动
+
+- **preset-mini:** ⚠️  Load configs natively and make jiti an optional peer dependency ([510dd22](https://github.com/Colourlessglow/esconf/commit/510dd22))
+
+### ❤️ 贡献者
+
+- Whitekite <xuxjigsaw@qq.com>
+
 ## v2.0.0
 
 [compare changes](https://github.com/Colourlessglow/esconf/compare/v1.0.0...v2.0.0)
