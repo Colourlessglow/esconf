@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "defu": "catalog:",
-    "pathe": "catalog:",
     "unconfig-core": "catalog:"
   },
   "publishConfig": {

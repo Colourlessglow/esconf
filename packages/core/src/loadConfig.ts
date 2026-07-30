@@ -1,7 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { createConfigCoreLoader } from 'unconfig-core'
-import { normalize } from 'pathe'
 import { defu } from 'defu'
 import { resolveOptions } from './options'
 import type {
@@ -12,6 +11,11 @@ import type {
   LoadESConfResultLayer,
   ResolveESConfOptions,
 } from './types'
+
+// 等价于 pathe 的 normalizeWindowsPath
+// 此处的输入均为 node:path resolve 后的绝对路径（分段已规整），只需处理 windows 的反斜杠与盘符大小写
+const normalize = (path: string) =>
+  path.replace(/\\/g, '/').replace(/^[A-Za-z]:\//, (r) => r.toUpperCase())
 
 const findFiles = <T>(layer: ESConfLayer<T>) => {
   const files: string[] = []
