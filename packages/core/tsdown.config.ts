@@ -10,7 +10,7 @@ export default defineConfig({
   publint: true,
   unused: true,
   deps: {
-    skipNodeModulesBundle: true,
+    neverBundle: true,
   },
   exports: true,
   fixedExtension: false,

@@ -18,6 +18,6 @@ export default defineConfig({
   exports: true,
   fixedExtension: false,
   deps: {
-    skipNodeModulesBundle: true,
+    neverBundle: true,
   },
 })
